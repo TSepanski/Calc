@@ -1,0 +1,25 @@
+.button{
+    margin-left: 27rem;
+    display: grid;
+    grid-template-columns: repeat(4,6rem);
+    grid-template-rows: repeat(6,6rem);
+}
+.span{
+    grid-column: span 2;
+}
+.output{
+    background-color: black;
+    grid-column: span 4;
+    text-align: right;
+    color: white;
+}
+
+.out{
+    font-size: 2.5rem;
+    margin-right: 8px;
+}
+
+button{
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
