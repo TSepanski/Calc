@@ -1,7 +1,7 @@
 var but = document.getElementsByTagName("button");
 var numMemory = null;
 var opMemory = null;
-var change = null;
+var change = 1;
 
 for(let i = 0;i < but.length;i++){
     var button = but[i];
@@ -23,7 +23,7 @@ for(let i = 0;i < but.length;i++){
                 Math.sqrt(parseFloat(document.getElementsByTagName("p")[0].innerText));
             }
         }else if((text==="+" || "÷X-".search(text)!=-1) && text!="."){
-            if(opMemory != null){
+            if(opMemory != null && change == 1){
                 numMemory = operate(opMemory,parseFloat(document.getElementsByTagName("p")[0].innerText),numMemory);
                 document.getElementsByTagName("p")[0].innerText = numMemory;
                 opMemory = text;
@@ -40,12 +40,14 @@ for(let i = 0;i < but.length;i++){
             if(change == 0){
                 numMemory = parseFloat(document.getElementsByTagName("p")[0].innerText);
                 document.getElementsByTagName("p")[0].innerText = "";
-                change = null;
+                change = 1;
             }
             document.getElementsByTagName("p")[0].innerText += text;
         }
     })
 }
+
+
 
 function operate(sign,n1,n2){
     switch(sign){
